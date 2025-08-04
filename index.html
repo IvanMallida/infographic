@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Guía Visual para Crear tu Web con WordPress</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 350px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+                max-height: 400px;
+            }
+        }
+        .flowchart-step {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .flowchart-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .flowchart-arrow {
+            content: '→';
+            font-size: 2.5rem;
+            line-height: 1;
+            color: #E9D8A6;
+        }
+    </style>
+</head>
+<body class="bg-[#001219] text-gray-800">
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#94D2BD] mb-4">Construye tu Web con WordPress</h1>
+            <p class="text-lg text-[#E9D8A6] max-w-3xl mx-auto">Una guía visual para lanzar tu sitio web, desde la planificación inicial hasta el despliegue final. Descubre por qué más del 40% de la web confía en esta plataforma.</p>
+        </header>
+
+        <main>
+            <section id="planificacion" class="mb-16">
+                <h2 class="text-3xl font-bold text-center text-[#94D2BD] mb-8">1: La Planificación Inicial</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                    <div class="bg-white rounded-lg shadow-xl p-6 flex flex-col">
+                        <h3 class="text-2xl font-bold text-[#005F73] mb-4">WordPress.com</h3>
+                        <p class="mb-4 flex-grow">La ruta todo-en-uno. El alojamiento está incluido y la configuración es mínima. Ideal para principiantes que buscan simplicidad.</p>
+                        <ul class="list-disc list-inside space-y-2 text-left flex-grow">
+                            <li><span class="font-semibold">Ventaja:</span> Extremadamente fácil de usar.</li>
+                            <li><span class="font-semibold">Ventaja:</span> Mantenimiento y seguridad gestionados.</li>
+                            <li><span class="font-semibold">Limitación:</span> Menos flexibilidad y control.</li>
+                            <li><span class="font-semibold">Limitación:</span> Personalización limitada en planes gratuitos/básicos.</li>
+                        </ul>
+                        <a href="https://wordpress.com/start" class="mt-6 block text-center bg-[#0A9396] text-white font-bold py-2 px-4 rounded-lg hover:bg-[#005F73] transition-colors">Empezar con .com</a>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-xl p-6 flex flex-col">
+                        <h3 class="text-2xl font-bold text-[#005F73] mb-4">WordPress.org</h3>
+                        <p class="mb-4 flex-grow">El software autoalojado. Ofrece control total y flexibilidad sin límites. La elección para proyectos profesionales y escalables.</p>
+                        <ul class="list-disc list-inside space-y-2 text-left flex-grow">
+                            <li><span class="font-semibold">Ventaja:</span> Control total sobre diseño y funcionalidad.</li>
+                            <li><span class="font-semibold">Ventaja:</span> Posibilidad de instalar cualquier tema o plugin.</li>
+                            <li><span class="font-semibold">Limitación:</span> Requiere contratar dominio y hosting.</li>
+                            <li><span class="font-semibold">Limitación:</span> Eres responsable de la seguridad y actualizaciones.</li>
+                        </ul>
+                        <a href="https://es.wordpress.org/download/" class="mt-6 block text-center bg-[#EE9B00] text-white font-bold py-2 px-4 rounded-lg hover:bg-[#CA6702] transition-colors">Descargar .org</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="checklist" class="mb-16">
+                <h2 class="text-3xl font-bold text-center text-[#94D2BD] mb-8">2: Checklist Pre-Lanzamiento</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="bg-white rounded-lg shadow-xl p-6 h-full">
+                        <h3 class="text-2xl font-bold text-[#005F73] mb-4 text-center">Requisitos Esenciales (.org)</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center p-4 bg-gray-50 rounded-lg">
+                                <span class="text-3xl mr-4">🌐</span>
+                                <div>
+                                    <h4 class="font-bold text-lg">Dominio</h4>
+                                    <p>La dirección única de tu sitio web (ej: `tusitio.com`).</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center p-4 bg-gray-50 rounded-lg">
+                                <span class="text-3xl mr-4">💾</span>
+                                <div>
+                                    <h4 class="font-bold text-lg">Hosting</h4>
+                                    <p>El servidor donde se almacenarán los archivos de tu web.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center p-4 bg-gray-50 rounded-lg">
+                                <span class="text-3xl mr-4">⚙️</span>
+                                <div>
+                                    <h4 class="font-bold text-lg">Software</h4>
+                                    <p>Tu hosting debe soportar PHP 7.4+ y MySQL 5.6+.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-xl p-6 h-full">
+                        <h3 class="text-2xl font-bold text-[#005F73] mb-4 text-center">Cuota de Mercado de WordPress</h3>
+                        <p class="text-center mb-4">WordPress impulsa una porción significativa de todos los sitios web en internet, demostrando su fiabilidad y popularidad.</p>
+                        <div class="chart-container">
+                            <canvas id="marketShareChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="proceso" class="mb-16">
+                <h2 class="text-3xl font-bold text-center text-[#94D2BD] mb-8">3: El Proceso de Creación</h2>
+                <p class="text-center text-lg text-[#E9D8A6] max-w-3xl mx-auto mb-10">Sigue estos pasos secuenciales para construir tu sitio desde cero. Cada fase te acerca más a tu objetivo final.</p>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-4 flex-wrap">
+                    <div class="flowchart-step bg-white rounded-lg shadow-xl p-6 text-center w-60 h-[200px]">
+                        <div class="text-4xl mb-2">1️⃣</div>
+                        <h4 class="font-bold text-lg text-[#005F73]">Instalación</h4>
+                        <p>Instala WordPress en tu hosting, ya sea manual o automáticamente.</p>
+                    </div>
+                    <div class="flowchart-step bg-white rounded-lg shadow-xl p-6 text-center w-60 h-[200px]">
+                        <div class="text-4xl mb-2">2️⃣</div>
+                        <h4 class="font-bold text-lg text-[#005F73]">Ajustes</h4>
+                        <p>Configura el título, la descripción y los enlaces permanentes.</p>
+                    </div>
+                    <div class="flowchart-step bg-white rounded-lg shadow-xl p-6 text-center w-60 h-[200px]">
+                        <div class="text-4xl mb-2">3️⃣</div>
+                        <h4 class="font-bold text-lg text-[#005F73]">Tema</h4>
+                        <p>Elige e instala el diseño visual de tu sitio web.</p>
+                    </div>
+                    <div class="flowchart-step bg-white rounded-lg shadow-xl p-6 text-center w-60 h-[200px]">
+                        <div class="text-4xl mb-2">4️⃣</div>
+                        <h4 class="font-bold text-lg text-[#005F73]">Plugins</h4>
+                        <p>Añade funcionalidades extra como SEO o formularios.</p>
+                    </div>
+                    <div class="flowchart-step bg-white rounded-lg shadow-xl p-6 text-center w-60 h-[200px]">
+                        <div class="text-4xl mb-2">5️⃣</div>
+                        <h4 class="font-bold text-lg text-[#005F73]">Páginas</h4>
+                        <p>Crea el contenido estático: Inicio, Contacto, etc.</p>
+                    </div>
+                    <div class="flowchart-step bg-white rounded-lg shadow-xl p-6 text-center w-60 h-[200px]">
+                        <div class="text-4xl mb-2">6️⃣</div>
+                        <h4 class="font-bold text-lg text-[#005F73]">Menú</h4>
+                        <p>Organiza tus páginas en un menú de navegación claro.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="herramientas" class="mb-16">
+                <h2 class="text-3xl font-bold text-center text-[#94D2BD] mb-8">4: Tu Caja de Herramientas</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                     <div class="bg-white rounded-lg shadow-xl p-6">
+                        <h3 class="text-2xl font-bold text-[#005F73] mb-4 text-center">Categorías de Plugins Populares</h3>
+                        <p class="text-center mb-4">Los plugins potencian tu web. Estas son las categorías más utilizadas para extender la funcionalidad básica de WordPress.</p>
+                        <div class="chart-container h-96 md:h-[450px]">
+                            <canvas id="pluginChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="space-y-6 h-full flex flex-col justify-between">
+                        <div class="bg-white rounded-lg shadow-xl p-6">
+                            <h3 class="text-2xl font-bold text-[#005F73] mb-2">🎨 Temas</h3>
+                            <p>Son la "piel" de tu sitio. Controlan el diseño, la tipografía y la apariencia general. Puedes encontrar miles de opciones gratuitas y premium para cualquier tipo de proyecto.</p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-xl p-6">
+                            <h3 class="text-2xl font-bold text-[#005F73] mb-2">🧩 Plugins</h3>
+                            <p>Son como "apps" para tu web. Añaden funciones específicas que no vienen por defecto, como tiendas online (WooCommerce), optimización para buscadores (SEO) o formularios de contacto.</p>
+                        </div>
+                         <div class="bg-white rounded-lg shadow-xl p-6">
+                            <h3 class="text-2xl font-bold text-[#005F73] mb-2">📄 Páginas vs. Entradas</h3>
+                            <p><span class="font-bold">Páginas:</span> Para contenido estático que no cambia a menudo (Inicio, Contacto). <span class="font-bold">Entradas (Posts):</span> Para contenido dinámico como artículos de blog, organizados por fecha y categoría.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="lanzamiento" class="text-center">
+                 <h2 class="text-3xl font-bold text-center text-[#94D2BD] mb-4">¡Tu Sitio Está Listo para Despegar!</h2>
+                 <p class="text-lg text-[#E9D8A6] max-w-2xl mx-auto mb-8">Has completado todos los pasos. Ahora solo queda revisar tu trabajo y compartir tu nuevo sitio web con el mundo.</p>
+                 <button class="bg-[#AE2012] text-white font-bold py-4 px-8 rounded-lg text-2xl hover:bg-[#9B2226] transition-transform transform hover:scale-105">🚀 ¡LANZAR SITIO!</button>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            const processLabel = (label) => {
+                if (label.length <= 16) {
+                    return label;
+                }
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + ' ' + word).trim().length > 16) {
+                        lines.push(currentLine.trim());
+                        currentLine = word;
+                    } else {
+                        currentLine = (currentLine + ' ' + word).trim();
+                    }
+                });
+                if (currentLine) {
+                    lines.push(currentLine.trim());
+                }
+                return lines;
+            };
+
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                }
+                return label;
+            };
+
+            const createMarketShareChart = () => {
+                const ctx = document.getElementById('marketShareChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['WordPress', 'Otros CMS y plataformas'],
+                        datasets: [{
+                            label: 'Cuota de Mercado',
+                            data: [43, 57],
+                            backgroundColor: ['#0A9396', '#E9D8A6'],
+                            borderColor: '#001219',
+                            borderWidth: 4,
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    color: '#005F73',
+                                    font: {
+                                        size: 14,
+                                        weight: 'bold'
+                                    }
+                                }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    title: tooltipTitleCallback,
+                                    label: function(context) {
+                                        return `${context.label}: ${context.raw}%`;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            };
+
+            const createPluginChart = () => {
+                const ctx = document.getElementById('pluginChart').getContext('2d');
+                const rawLabels = ['Constructores Visuales', 'Optimización SEO', 'Comercio Electrónico', 'Seguridad Web', 'Formularios de Contacto', 'Caché y Rendimiento'];
+                const processedLabels = rawLabels.map(processLabel);
+
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: processedLabels,
+                        datasets: [{
+                            label: 'Popularidad de Plugins',
+                            data: [95, 92, 85, 88, 98, 75],
+                            backgroundColor: ['#0A9396', '#94D2BD', '#E9D8A6', '#EE9B00', '#CA6702', '#BB3E03'],
+                            borderColor: '#001219',
+                            borderWidth: 2,
+                            borderRadius: 5
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    title: tooltipTitleCallback
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                grid: {
+                                    color: 'rgba(148, 210, 189, 0.2)'
+                                },
+                                ticks: {
+                                    color: '#94D2BD'
+                                }
+                            },
+                            y: {
+                                grid: {
+                                    display: false
+                                },
+                                ticks: {
+                                    color: '#005F73',
+                                    font: {
+                                        size: 12,
+                                        weight: 'bold'
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            };
+
+            createMarketShareChart();
+            createPluginChart();
+        });
+    </script>
+
+</body>
+</html>
